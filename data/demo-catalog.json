@@ -1,0 +1,200 @@
+{
+  "entries": [
+    {
+      "code": "S001",
+      "name": "Выполнение учебного плана",
+      "source": "Учебные данные",
+      "indicator_name": "Выполнение учебного плана",
+      "metric_name": "Выполнение учебного плана",
+      "applicability": {
+        "kind": "dgd"
+      },
+      "cumulative": true,
+      "rule": {
+        "fields": [
+          {
+            "key": "A",
+            "label": "Факт",
+            "min": 0
+          },
+          {
+            "key": "B",
+            "label": "План или база сравнения",
+            "min": 0
+          }
+        ]
+      }
+    },
+    {
+      "code": "S017",
+      "name": "Результат администрирования",
+      "source": "Учебные данные",
+      "indicator_name": "Результат администрирования",
+      "metric_name": "Результат администрирования",
+      "applicability": {
+        "kind": "dgd"
+      },
+      "cumulative": true,
+      "rule": {
+        "fields": [
+          {
+            "key": "A",
+            "label": "Факт",
+            "min": 0
+          },
+          {
+            "key": "B",
+            "label": "План или база сравнения",
+            "min": 0
+          }
+        ]
+      }
+    },
+    {
+      "code": "S039",
+      "name": "Своевременность экспертиз",
+      "source": "Учебные данные",
+      "indicator_name": "Своевременность экспертиз",
+      "metric_name": "Своевременность экспертиз",
+      "applicability": {
+        "kind": "ctl"
+      },
+      "cumulative": true,
+      "rule": {
+        "fields": [
+          {
+            "key": "A",
+            "label": "Факт",
+            "min": 0
+          },
+          {
+            "key": "B",
+            "label": "План или база сравнения",
+            "min": 0
+          }
+        ]
+      }
+    },
+    {
+      "code": "S041",
+      "name": "Выполнение плана лаборатории",
+      "source": "Учебные данные",
+      "indicator_name": "Выполнение плана лаборатории",
+      "metric_name": "Выполнение плана лаборатории",
+      "applicability": {
+        "kind": "ctl"
+      },
+      "cumulative": true,
+      "rule": {
+        "fields": [
+          {
+            "key": "A",
+            "label": "Факт",
+            "min": 0
+          },
+          {
+            "key": "B",
+            "label": "План или база сравнения",
+            "min": 0
+          }
+        ]
+      }
+    },
+    {
+      "code": "S057",
+      "name": "Доля замечаний по проверкам",
+      "source": "Учебные данные",
+      "indicator_name": "Доля замечаний по проверкам",
+      "metric_name": "Доля замечаний по проверкам",
+      "applicability": {
+        "kind": "dgd"
+      },
+      "cumulative": true,
+      "rule": {
+        "fields": [
+          {
+            "key": "A",
+            "label": "Факт",
+            "min": 0
+          },
+          {
+            "key": "B",
+            "label": "План или база сравнения",
+            "min": 0
+          }
+        ]
+      }
+    },
+    {
+      "code": "S058",
+      "name": "Доля нарушений",
+      "source": "Учебные данные",
+      "indicator_name": "Доля нарушений",
+      "metric_name": "Доля нарушений",
+      "applicability": {
+        "kind": "dgd"
+      },
+      "cumulative": true,
+      "rule": {
+        "fields": [
+          {
+            "key": "A",
+            "label": "Факт",
+            "min": 0
+          },
+          {
+            "key": "B",
+            "label": "План или база сравнения",
+            "min": 0
+          }
+        ]
+      }
+    },
+    {
+      "code": "S081",
+      "name": "Выполнение плана сервисных услуг",
+      "source": "Учебные данные",
+      "indicator_name": "Выполнение плана сервисных услуг",
+      "metric_name": "Выполнение плана сервисных услуг",
+      "applicability": {
+        "kind": "dgd"
+      },
+      "cumulative": true,
+      "rule": {
+        "fields": [
+          {
+            "key": "A",
+            "label": "Факт",
+            "min": 0
+          },
+          {
+            "key": "B",
+            "label": "План или база сравнения",
+            "min": 0
+          }
+        ]
+      }
+    },
+    {
+      "code": "S088",
+      "name": "Количество замечаний по управлению",
+      "source": "Учебные данные",
+      "indicator_name": "Количество замечаний по управлению",
+      "metric_name": "Количество замечаний по управлению",
+      "applicability": {
+        "kind": "dgd"
+      },
+      "cumulative": true,
+      "rule": {
+        "fields": [
+          {
+            "key": "A",
+            "label": "Факт",
+            "min": 0
+          }
+        ]
+      }
+    }
+  ],
+  "issues": []
+}
