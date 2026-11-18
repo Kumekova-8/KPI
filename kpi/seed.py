@@ -102,8 +102,13 @@ def seed(db):
             tx.insert('users',dict(id=id,name=name,role=role,scope=scope,password=password_hash(PASSWORD),active=1))
         for id,name in REGIONS:
             tx.insert('regions',dict(id=id,name=name,kind='ctl' if id=='ctl' else 'dgd'))
-        catalog = json.loads((ROOT/'data'/'catalog.json').read_text('utf8'))
-        entries = catalog['entries']
+        catalog_file = ROOT/'data'/'catalog.json'
+        if catalog_file.is_file() and not os.getenv('VERCEL'):
+            catalog = json.loads(catalog_file.read_text('utf8'))
+            entries = catalog['entries']
+        else:
+            catalog = json.loads((ROOT/'data'/'demo-catalog.json').read_text('utf8'))
+            entries = []
         source = {'entries':entries,'ctl_denominator':None,
                   'aggregate_blockers':{'dgd':['G-02','G-06'],'ctl':['G-03','G-06','G-08'],'deputy':['G-04','G-06']}}
         for track,name,content in [('demo','Демонстрационная методика 1.0',demo_content(catalog)),

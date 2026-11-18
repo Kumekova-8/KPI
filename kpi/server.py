@@ -221,8 +221,10 @@ class Handler(BaseHTTPRequestHandler):
                 return methods.list_methods(tx,user)
             if path=='/api/discrepancies':
                 role(user,'method','approver','analyst')
-                catalog = json.loads((ROOT/'data'/'catalog.json').read_text('utf8'))
-                return catalog['issues']
+                catalog_file = ROOT/'data'/'catalog.json'
+                if catalog_file.is_file() and not os.getenv('VERCEL'):
+                    return json.loads(catalog_file.read_text('utf8'))['issues']
+                return []
             deputy = re.fullmatch(r'/api/deputies/([a-z0-9-]+)/results',path)
             if deputy:
                 return flow.deputy_history(tx,user,deputy[1],track,period,kind)
