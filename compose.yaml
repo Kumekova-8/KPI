@@ -1,0 +1,26 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: kpi
+      POSTGRES_PASSWORD: ${KPI_DB_PASSWORD:-demo-local-only}
+      POSTGRES_DB: kpi
+    volumes:
+      - kpi-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kpi"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+  app:
+    build: .
+    environment:
+      KPI_DATABASE: postgresql://kpi:${KPI_DB_PASSWORD:-demo-local-only}@db:5432/kpi
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:8765:8765"
+volumes:
+  kpi-db:
+
