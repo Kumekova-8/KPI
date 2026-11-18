@@ -1,0 +1,24 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "outputDirectory": "web",
+  "functions": {
+    "api/index.py": {
+      "includeFiles": "{data/demo-catalog.json,migrations/**}",
+      "excludeFiles": "{data/catalog.json,docs/**,runtime/**,tests/**,tools/**}"
+    }
+  },
+  "rewrites": [
+    { "source": "/api/:endpoint*", "destination": "/api/index?__kpi_endpoint=:endpoint*" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "no-referrer" },
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; frame-ancestors 'self'; form-action 'self'; base-uri 'none'" }
+      ]
+    }
+  ]
+}
